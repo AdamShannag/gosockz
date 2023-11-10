@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Websockets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Simple Chat Application</h1>
+        <hr>
+        <div id="loggedin">
+            <h3 id="chat-header">Currently in chat: general</h3>
+            <h3 id="connection-header">Connected to Websocket: false</h3>
+            <hr>
+            <div class="row">
+                <form id="chatroom-selection">
+                    <div class="nine columns">
+                        <input placeholder="room" class="u-full-width" type="text" id="chatroom" name="chatroom">
+                    </div>
+                    <div class="three columns">
+                        <input class="u-pull-right" type="submit" value="Enter chatroom">
+                    </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <form id="user-selection">
+                    <div class="nine columns">
+                        <input placeholder="username" class="u-full-width" type="text" id="userToMessage"
+                            name="username">
+                    </div>
+                    <div class="three columns">
+                        <input class="u-pull-right" type="submit" value="Message User">
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+            <div class="row">
+                <textarea class="messagearea u-full-width" id="chatmessages" readonly name="chatmessages" rows="4"
+                    cols="50"
+                    placeholder="Welcome to the general chatroom, here messages from others will appear"></textarea>
+
+            </div>
+
+            <div class="row">
+                <form id="chatroom-message">
+                    <label for="message">Message:</label>
+                    <input class="u-full-width" type="text" id="message" name="message"><br><br>
+                    <input type="submit" class="u-pull-right button-primary" value="Send message">
+                </form>
+            </div>
+        </div>
+
+        <div id="loggedout">
+            <h2>Login</h2>
+            <div>
+                <form id="login-form">
+                    <label for="username">username:</label>
+                    <input class="u-full-width" type="text" id="username" name="username"><br>
+                    <label for="password">password:</label>
+                    <input class="u-full-width" type="password" id="password" name="password"><br><br>
+                    <input class="u-full-width button-primary" type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./events.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
